@@ -28,7 +28,12 @@ pipeline {
 
         stage('Build Application') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                sh '''
+                    echo "Using Java at: $JAVA_HOME"
+                    java -version
+                    mvn -version
+                    mvn clean package -DskipTests
+                '''
             }
         }
 
