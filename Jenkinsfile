@@ -12,7 +12,8 @@ pipeline {
         REPORT_DIR = "dependency-check-report"
         // Optional: NVD API Key stored in Jenkins credentials
         // NVD_API_KEY = credentials('nvd-api-key')
-        NVD_API_KEY = "asiudhasudhasuidhuhas"
+        NVD_API_KEY = credentials('nvd-api-key')
+        
     }
 
     tools {
