@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'agent-1'
+    }
 
     environment {
         // Adjust these paths based on where Dependency-Check CLI is installed on your agent
@@ -7,7 +9,8 @@ pipeline {
         DEP_CHECK_DATA = "${DEP_CHECK_HOME}/data"
         REPORT_DIR = "dependency-check-report"
         // Optional: NVD API Key stored in Jenkins credentials
-        NVD_API_KEY = credentials('nvd-api-key')
+        // NVD_API_KEY = credentials('nvd-api-key')
+        NVD_API_KEY = "asiudhasudhasuidhuhas"
     }
 
     tools {
