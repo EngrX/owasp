@@ -5,7 +5,7 @@ pipeline {
 
     environment {
         // Adjust these paths based on where Dependency-Check CLI is installed on your agent
-        JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64/bin/java"
+        JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
         PATH = "${JAVA_HOME}/bin:${PATH}"
         DEP_CHECK_HOME = "/opt/dependency-check"
         DEP_CHECK_DATA = "${DEP_CHECK_HOME}/data"
