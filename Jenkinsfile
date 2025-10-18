@@ -12,7 +12,7 @@ pipeline {
         stage('Dependency Check') {
             steps {
                 // Run OWASP Dependency-Check analysis
-                dependencyCheck additionalArguments: '--scan . --format HTML', odcInstallation: 'DependencyCheck'
+                dependencyCheck additionalArguments: '--scan . --format HTML', odcInstallation: 'dependency-check'
             }
         }
 
