@@ -1,24 +1,27 @@
+y plugin
+🧱 Then in your Jenkinsfile:
 pipeline {
     agent any
+    tools {
+        jdk 'JDK17'
+        maven 'Maven'
+    }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
                 sh 'mvn clean install'
             }
         }
 
         stage('Dependency Check') {
             steps {
-                // Run OWASP Dependency-Check analysis
-                dependencyCheck additionalArguments: '--scan . --format HTML', odcInstallation: 'dependency-check'
+                dependencyCheck additionalArguments: '--scan . --format HTML', odcInstallation: 'DependencyCheck'
             }
         }
 
         stage('Publish Report') {
             steps {
-                // Publish the report generated
                 dependencyCheckPublisher pattern: '**/dependency-check-report.html'
             }
         }
