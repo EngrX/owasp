@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        dependencyCheck 'DependencyCheck' // must match the name you added under Global Tool Config
+        dependencyCheck 'dependency-check' // must match the name you added under Global Tool Config
     }
     stages {
         stage('Build') {
