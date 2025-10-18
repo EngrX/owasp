@@ -1,5 +1,3 @@
-y plugin
-🧱 Then in your Jenkinsfile:
 pipeline {
     agent any
     tools {
