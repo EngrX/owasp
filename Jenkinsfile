@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    tools {
-        dependencyCheck 'dependency-check' // must match the name you added under Global Tool Config
-    }
+
     stages {
         stage('Build') {
             steps {
@@ -10,13 +8,17 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+
         stage('Dependency Check') {
             steps {
+                // Run OWASP Dependency-Check analysis
                 dependencyCheck additionalArguments: '--scan . --format HTML', odcInstallation: 'DependencyCheck'
             }
         }
+
         stage('Publish Report') {
             steps {
+                // Publish the report generated
                 dependencyCheckPublisher pattern: '**/dependency-check-report.html'
             }
         }
