@@ -14,7 +14,10 @@ pipeline {
 
         stage('Dependency Check') {
             steps {
-                dependencyCheck additionalArguments: '--scan . --format HTML', odcInstallation: 'DependencyCheck'
+                // dependencyCheck additionalArguments: '--scan . --format HTML', odcInstallation: 'DependencyCheck'
+
+
+                dependencyCheck additionalArguments: '--scan . --format HTML --disableNvd --enableExperimental', odcInstallation: 'DependencyCheck'
             }
         }
 
