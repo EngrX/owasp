@@ -15,7 +15,7 @@ pipeline {
         stage('Dependency Check') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'ossIndexCreds', usernameVariable: 'OSS_USER', passwordVariable: 'OSS_TOKEN')]) {
-                    sh """
+                    sh '''
                     /opt/dependency-check/bin/dependency-check.sh \
                         --project "MyProject" \
                         --scan . \
@@ -25,7 +25,7 @@ pipeline {
                         --ossIndexToken $OSS_TOKEN \
                         --failOnCVSS 7 \
                         --out $WORKSPACE/dependency-check-report.html
-                    """
+                    '''
                 }
             }
         }
