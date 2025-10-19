@@ -18,13 +18,14 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'ossIndexCreds', usernameVariable: 'OSS_USER', passwordVariable: 'OSS_TOKEN')]) {
                     sh '''
+                    # Set OSS Index credentials as environment variables
                     export OSSINDEX_USER=$OSS_USER
                     export OSSINDEX_TOKEN=$OSS_TOKEN
 
+                    # Run Dependency-Check
                     /opt/dependency-check/bin/dependency-check.sh \
                         --project "MyProject" \
                         --scan . \
-                        --noupdate \
                         --format HTML \
                         --failOnCVSS 7 \
                         --out $WORKSPACE/dependency-check-report.html
