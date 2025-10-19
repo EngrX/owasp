@@ -23,7 +23,6 @@ pipeline {
                         --project "MyProject" \
                         --scan . \
                         --format HTML \
-                        --noupdate \
                         --failOnCVSS 7 \
                         --out $WORKSPACE/dependency-check-report.html
                     '''
