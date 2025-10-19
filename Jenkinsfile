@@ -20,7 +20,7 @@ pipeline {
                         --project "MyProject" \
                         --scan . \
                         --format HTML \
-                        --disableNvd \
+                        --noupdate \
                         --enableExperimental \
                         --ossIndexUser $OSS_USER \
                         --ossIndexToken $OSS_TOKEN \
