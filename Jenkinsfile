@@ -24,6 +24,7 @@ pipeline {
                     /opt/dependency-check/bin/dependency-check.sh \
                         --project "MyProject" \
                         --scan . \
+                        --noupdate \
                         --format HTML \
                         --failOnCVSS 7 \
                         --out $WORKSPACE/dependency-check-report.html
