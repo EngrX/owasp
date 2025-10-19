@@ -37,10 +37,5 @@ pipeline {
                 archiveArtifacts artifacts: 'dependency-check-report.html', allowEmptyArchive: true
             }
         }
-                stage('Publish Report') {
-                    steps {
-                        dependencyCheckPublisher pattern: '**/dependency-check-report.html'
-                    }
-                }
             }
         }
