@@ -37,5 +37,5 @@ pipeline {
                 archiveArtifacts artifacts: 'dependency-check-report.html', allowEmptyArchive: true
             }
         }
-            }
-        }
+    }
+}
