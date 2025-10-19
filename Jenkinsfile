@@ -21,7 +21,6 @@ pipeline {
                         --scan . \
                         --format HTML \
                         --noupdate \
-                        --enableExperimental \
                         --ossIndexUser $OSS_USER \
                         --ossIndexToken $OSS_TOKEN \
                         --failOnCVSS 7 \
